@@ -20,7 +20,7 @@ function  bids_fill_fmap_jsons( experiment, sub, ses, intended_tasks )
 
     %set fmap and func directories to appropriate locations
     %func dir is with respect to the subject dir per bids spec
-    bids_dir = get_bids_dir(experiment);
+    bids_dir = [getenv('BIDS'), '/', experiment];
     if ses>0
         subses_dir = sprintf('%s/sub-%02d/ses-%02d',bids_dir,sub,ses);
         func_dir = sprintf('ses-%02d/func',ses);
@@ -37,7 +37,7 @@ function  bids_fill_fmap_jsons( experiment, sub, ses, intended_tasks )
     filenames = string(scans.filename);
     func_scans = cellstr(filenames(contains(filenames,'func/'),:));
     runs_per_task = zeros(size(intended_tasks));
-    for task_i=1:length(intended_tasks)     
+    for task_i=1:length(intended_tasks)
         task = intended_tasks{task_i};
         runs_per_task(task_i) = sum(contains(func_scans,[task,'_']));
     end
