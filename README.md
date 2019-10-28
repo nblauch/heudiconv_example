@@ -3,11 +3,11 @@ Example for using heudiconv to convert a series of DICOM folders to BIDS format
 
 ### Requirements:
 - docker
-- environment variable BIDS=\<top level directory containing bids experiments\>
-- at least one subject of data inside $BIDS/$experiment/sourcedata
+- environment variable `BIDS=\<top level directory containing bids experiments\>`
+- at least one subject of data inside `$BIDS/$experiment/sourcedata`
 
-The DICOM folders in sourcedata/sub-${sub_id} can be the poorly named '1', '2', ... folders from fileserver2.  
-My script will attempt to rename them using the Tarrlab script renameDicomSeries.m (author: Austin Marcus)
+The DICOM folders in `sourcedata/sub-${sub_id}` can be the poorly named '1', '2', ... folders from fileserver2.  
+My script will attempt to rename them using the Tarrlab script `renameDicomSeries.m` (author: Austin Marcus)
 
 It assumes no session format but can easily be modified to take a session argument and organize into session specific folders
 
