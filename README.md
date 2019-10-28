@@ -3,7 +3,7 @@ Example for using heudiconv to convert a series of DICOM folders to BIDS format
 
 ### Requirements:
 - docker
-- environment variable BIDS=<top level directory containing bids experiments>
+- environment variable BIDS=\<top level directory containing bids experiments\>
 - at least one subject of data inside $BIDS/$experiment/sourcedata
 
 The DICOM folders in sourcedata can be the poorly named '1', '2', ... folders from fileserver2.  
