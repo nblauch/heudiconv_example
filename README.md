@@ -16,6 +16,6 @@ To convert a subject with ID '01' for BIDS experiment 'lateralization':
 
 The script will also attempt to fill the field map .json files with the 'intended for' field, specified by an array of tasks set on line 32
 
-questions: create an issue or email blauch@cmu.edu
+questions: create an issue 
 
-Author: Nicholas Blauch, viscog group @ CMU
+Author: Nicholas Blauch, viscog group @ CMU (blauch@cmu.edu)
