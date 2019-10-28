@@ -19,11 +19,11 @@ matlab -nodisplay -nosplash -r "renameDicomSeries('${BIDS}/${experiment}/sourced
 
 #  do heudiconv (dcm2niix plus bids conversion)
 sudo docker run --rm -it \
--v ~/git/bids_code/${experiment}:/code \
+-v heuristics:/heuristics \
 -v ${BIDS}/${experiment}:/data \
 nipy/heudiconv:debian \
 -d '/data/sourcedata/sub-{subject}/*/*.dcm*' \
--s $subnum -f /code/heuristics/${experiment}.py -c dcm2niix -b -o /data --minmeta
+-s $subnum -f /heuristics/${experiment}.py -c dcm2niix -b -o /data --minmeta
 
 # --------  fill field map .json intended for field --------------
 sudo chown $USER ${BIDS}/${experiment}/sub-${sub}/fmap/sub-${sub}_acq-opp-phase-epi_dir-PA_epi.json
