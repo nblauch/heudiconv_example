@@ -2,12 +2,13 @@ function  bids_fill_fmap_jsons( experiment, sub, ses, intended_tasks )
 %BIDS_FILL_FMAP_JSONS(experiment,sub)
 %   -fill in the "IntendedFor" field in fmap .json files
 %   necessary for distortion correction with FMRIPREP
-%   -requires get_bids_dir, jsonlab toolbox
+%   -requires jsonlab toolbox to be on path
+%   -requires env variable BIDS=<path to folder under which bids experiment is located>
 %   -for now, cannot distinguish between field maps acquired for one vs.
 %   another set of scans (have not needed it & no standard naming
 %   framework)
 %   -assumes that all functional data is stored within /func
-%   -REQUIRES MATLAB < 2017A (savejson is broken for new editions)
+%   -may have issues for  MATLAB 2017 versions (tested on MATLAB 2018b with jsonlab1.9)
 %
 %   input args:
 %   experiment: name of bids experiment
